@@ -16,11 +16,11 @@ function Particle() {
           },
           line_linked: {
             enable: false,
-            opacity: 0.03,
+            opacity: 0.05,
           },
           move: {
             direction: "right",
-            speed: 0.05,
+            speed: 25,
           },
           size: {
             value: 1,
@@ -28,8 +28,8 @@ function Particle() {
           opacity: {
             anim: {
               enable: true,
-              speed: 1,
-              opacity_min: 0.05,
+              speed: 25,
+              opacity_min: 0.1,
             },
           },
         },
