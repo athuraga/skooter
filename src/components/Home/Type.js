@@ -7,10 +7,14 @@ function Type() {
       options={{
         strings: [
           "No Q-drivng",
-          "No Toll",
+          "No Toll Fee",
           "No Parking Fee",
+          "No Insurance",
+          "Born Electric",
+          "No Plastics",
           "Built for Urbaners",
-          "Ride in Style",
+          "Built for Parents",
+          "Built for Students",
           "Built to last"
         ],
         autoStart: true,

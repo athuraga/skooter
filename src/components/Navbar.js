@@ -41,10 +41,10 @@ function NavBar() {
         <Navbar.Brand>
         <h1 className="heading-name">
                 
-                <strong className="main-name">skooter.ai</strong>
+                <strong className="main-name">skoter.ai</strong>
               </h1>
 
-          {/* <img src={''} className="img-fluid logo" alt="skooter.ai" /> */}
+          {/* <img src={''} className="img-fluid logo" alt="skoter.ai" /> */}
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -99,7 +99,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                href="https://skooterblogs.vercel.app/"
+                href="https://skoterblogs.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -109,7 +109,7 @@ function NavBar() {
 {/* 
             <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/skooter4419/Portfolio"
+                href="https://github.com/skoter4419/Portfolio"
                 target="_blank"
                 className="fork-btn-inner"
               >

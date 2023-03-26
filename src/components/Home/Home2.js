@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/WBR-Us.png";
+import myImg from "../../Assets/wbr12.png";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -65,7 +65,7 @@ function Home2() {
             {/* <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/skooter4419"
+                  href="https://github.com/skoter4419"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -75,7 +75,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/skooter4419"
+                  href="https://twitter.com/skoter4419"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -85,7 +85,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/skooter4419/"
+                  href="https://www.linkedin.com/in/skoter4419/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -95,7 +95,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com/skooter4419"
+                  href="https://www.instagram.com/skoter4419"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"

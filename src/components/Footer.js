@@ -14,16 +14,16 @@ function Footer() {
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by skooter.ai</h3>
+          <h3> </h3>
         </Col>
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} skooter.ai</h3>
+          <h3>Copyright © {year} skoter.ai</h3>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
             <li className="social-icons">
               <a
-                href="https://github.com/skooter4419"
+                href="https://github.com/skoter4419"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -33,7 +33,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://twitter.com/skooter4419"
+                href="https://twitter.com/skoter4419"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -43,7 +43,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.linkedin.com/in/skooter4419/"
+                href="https://www.linkedin.com/in/skoter4419/"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -53,7 +53,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/skooter4419"
+                href="https://www.instagram.com/skoter4419"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"

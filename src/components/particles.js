@@ -1,7 +1,7 @@
 const canvas = document.getElementById("home");
 const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = window.screen.availWidth;
+canvas.height = window.screen.availHeight;
 
 let area = Math.sqrt(canvas.width * canvas.height);
 let radiusLength = canvas.width * canvas.height / 8000;
@@ -26,8 +26,8 @@ window.addEventListener("mouseout", function(event) {
 
 });
 window.addEventListener("resize", function(event) {
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
+    canvas.width = window.screen.availWidth;
+    canvas.height = window.screen.availHeight;
     radiusLength = canvas.width * canvas.height / 9000;
     createParticles();
 
@@ -103,8 +103,8 @@ function createParticles() {
     for (let i = 0; i < noOfParticles; i++) {
         let size = (Math.random() * 3) + 1;
 
-        let x = (Math.random() * (innerWidth - 2 * size) + 2 * size);
-        let y = (Math.random() * (innerHeight - 2 * size) + 2 * size);
+        let x = (Math.random() * (window.screen.availWidth - 2 * size) + 2 * size);
+        let y = (Math.random() * (window.screen.availHeight - 2 * size) + 2 * size);
         let velX = (Math.random() * 5) - 2.5;
         let velY = (Math.random() * 5) - 2.5;
         let color = "#24bfdc"
@@ -141,7 +141,7 @@ function connect() {
 
 function animate() {
     requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    ctx.clearRect(0, 0, window.screen.availWidth, window.screen.availHeight);
 
     for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();

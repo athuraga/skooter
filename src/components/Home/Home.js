@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/WBR1_C.png";
 import bg from "../../Assets/peakpx1.jpg";
 import Particle from "../Particle";
+// import Particles from "../particles";
 import Home2 from "./Home2";
 import Type from "./Type";
 
@@ -11,14 +12,12 @@ function Home() {
     <section>
       <Container fluid className="home-section" id="home">
       {/* <image ={{ backgroundImage:`url(${bg})`,backgroundRepeat:"no-repeat",backgroundSize:"contain", opacity:"15%" }}> */}
-      <script src="particles.js"></script>
-      
         <Particle />
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
-                {"skoot in style "}
+                {"skot in style "}
                 {/* <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span> */}
@@ -39,7 +38,7 @@ function Home() {
                 src={homeLogo}
                 alt="home pic"
                 className="img-fluid"
-                // style={{ maxHeight: "900px" }}
+                style={{ maxHeight: "1900px" }}
               />
             </Col>
           </Row>
