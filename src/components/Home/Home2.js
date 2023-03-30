@@ -16,37 +16,37 @@ function Home2() {
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              -------- <span className="purple"> ---- </span> -----------
+              VISION <span className="purple">  </span> 
             </h1>
             <p className="home-about-body">
-             ------------------------------
-              <br />
-              <br />---------
+             We're Changing the 
+              <br />Way the World Thinks 
+              <br />About Transportation
               <i>
-                <b className="purple"> ------ </b>
+                <b className="purple">  </b>
               </i>
               <br />
               <br />
-              ------------- &nbsp;
+             I'm a paragraph. &nbsp;
               <i>
-                <b className="purple">------------- </b> and
-              -------------{" "}
+                <b className="purple">Click here to add your own text </b> and
+              edit me.{" "}
                 <b className="purple">
-                 ---------------
+                 It's easy. Just click "Edit me" or double click me 
                 </b>
               </i>
               <br />
               <br />
-........                <b className="purple">-----</b> and
+........                <b className="purple">to add your own content</b> and
               <i>
                 <b className="purple">
                   {" "}
-----------
+make changes to the font.T' m a great place for you to tell a story
                 </b>
               </i>
               &nbsp; like
               <i>
-                <b className="purple"> ------------</b>
+                <b className="purple"> and let your users know a little more about you</b>
               </i>
             </p>
           </Col>
@@ -58,9 +58,9 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>---------</h1>
+            <h1>Services</h1>
             <p>
-             ------<span className="purple">---- </span>----------
+             We Deliver Exceptional Products<span className="purple"> and  </span>Services Around the World
             </p>
             {/* <ul className="home-about-social-links">
               <li className="social-icons">
