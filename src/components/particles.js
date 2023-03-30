@@ -1,155 +1,94 @@
-const canvas = document.getElementById("home");
-const ctx = canvas.getContext("2d");
-canvas.width = window.screen.availWidth;
-canvas.height = window.screen.availHeight;
+import { useCallback } from "react";
+import Particless from "react-tsparticles";
+// import { loadFull } from "tsparticles";
 
-let area = Math.sqrt(canvas.width * canvas.height);
-let radiusLength = canvas.width * canvas.height / 8000;
+function Particles() {
+    return (
+        <Particless id="tsparticless"
+            params={{
+                particles: {
+                    color: {
+                        value: "#6d20c5d7",
+                    },
+                    links: {
+                        color: "#FFFFFF",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.5,
+                        width: 1,
+                    },
+                    collisions: {
+                        enable: true,
+                    },
+                    move: {
+                        directions: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce",
+                        },
+                        random: false,
+                        speed: 3,
+                        straight: false,
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            area: 800,
+                        },
+                        value: 80,
+                    },
+                    opacity: {
+                        value: 0.5,
+                    },
+                    shape: {
+                        type: "circle",
+                    },
+                    size: {
+                        value: { min: 1, max: 3 },
+                    },
+                },
+                interactivity: {
+                    detectsOn: "canvas",
+                    events: {
+                        onHover: {
+                            enable: true,
+                            mode: "repulse"
+                        },
+                        onClick: {
+                            enable: true,
+                            mode: "bubble"
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 400,
+                            links: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 0.8
+                        },
+                        repulse: {
+                            distance: 200
+                        },
+                        push: {
+                            quantity: 4
+                        },
+                        remove: {
+                            quantity: 2
+                        }
+                    }
+                },
+                detectRetina: true,
 
-
-let particlesArray;
-
-let mouse = {
-    x: null,
-    y: null,
-    radius: radiusLength
+            }}
+        />
+    );
 }
 
-window.addEventListener("mousemove", function(event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
-
-});
-window.addEventListener("mouseout", function(event) {
-    mouse.x = undefined;
-    mouse.y = undefined;
-
-});
-window.addEventListener("resize", function(event) {
-    canvas.width = window.screen.availWidth;
-    canvas.height = window.screen.availHeight;
-    radiusLength = canvas.width * canvas.height / 9000;
-    createParticles();
-
-
-});
-
-
-
-
-
-
-class Particle {
-    constructor(x, y, velX, velY, size, color) {
-        this.x = x;
-        this.y = y;
-        this.velX = velX;
-        this.velY = velY;
-        this.size = size;
-        this.color = color;
-    }
-
-    draw() {
-        ctx.beginPath();
-        //draw a circle and fill it 
-        //at posX, posY ,of size, fromAngle 0rad ,to 2pi Rad 
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 3, false);
-        ctx.fillStyle = "#24bfdc"
-        ctx.fill();
-
-    }
-
-    update() {
-        if (this.x > canvas.width || this.x < 0) {
-            this.velX = -this.velX;
-        }
-        if (this.y > canvas.height || this.y < 0) {
-            this.velY = -this.velY;
-        }
-
-        // collisions
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let dist = Math.sqrt((dx * dx) + (dy * dy));
-        if (dist < mouse.radius + this.size) {
-            //Buffers on edge of the screens
-            const buffer = this.size * 10
-
-            if (mouse.x < this.x && this.x < canvas.width - buffer) {
-                this.x += 10;
-            }
-            if (mouse.x > this.x && this.x > buffer) {
-                this.x -= 10;
-            }
-            if (mouse.y < this.y && this.y < canvas.height - buffer) {
-                this.y += 10;
-            }
-            if (mouse.y > this.y && this.y > buffer) {
-                this.y -= 10;
-            }
-        }
-
-        //moving
-        this.x += this.velX;
-        this.y += this.velY;
-        this.draw();
-    }
-}
-
-function createParticles() {
-    particlesArray = [];
-    let noOfParticles = canvas.width * canvas.height / 15000;
-
-    for (let i = 0; i < noOfParticles; i++) {
-        let size = (Math.random() * 3) + 1;
-
-        let x = (Math.random() * (window.screen.availWidth - 2 * size) + 2 * size);
-        let y = (Math.random() * (window.screen.availHeight - 2 * size) + 2 * size);
-        let velX = (Math.random() * 5) - 2.5;
-        let velY = (Math.random() * 5) - 2.5;
-        let color = "#24bfdc"
-            // console.log(x + " " + y + " " + size + " " + velX + " " + velY);
-
-        particlesArray.push(new Particle(x, y, velX, velY, size, color));
-    }
-}
-
-function connect() {
-
-    let vicinityDist = canvas.width * canvas.height / 81;
-    for (let i = 0; i < particlesArray.length; i++) {
-        for (let j = i; j < particlesArray.length; j++) {
-            let distance = Math.pow(particlesArray[i].x - particlesArray[j].x, 2) +
-                Math.pow(particlesArray[i].y - particlesArray[j].y, 2);
-
-            let opacity = 1 - distance / 25000;
-            //actually the square of distance
-
-            if (distance < vicinityDist) {
-                //draw a line between them
-                ctx.strokeStyle = "rgba(33,67,133," + opacity + ")";
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-                ctx.stroke();
-
-            }
-        }
-    }
-}
-
-function animate() {
-    requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, window.screen.availWidth, window.screen.availHeight);
-
-    for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-    }
-    connect();
-}
-
-
-
-createParticles();
-animate();
+export default Particles;
